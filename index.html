@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Anales de la ciencia</title>
+	<meta charset="UTF-8">
+	<base target="_self">
+	<link rel="stylesheet" href="./styles/index_style.css">
+	<link rel="shortcut icon" href="./images/logo.png">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<script src="./scripts/script_index.js"></script>
+</head>
+
+<body onload="cargar();">
+	<nav>
+		<ul class="nav_menu">
+			<div class="cont_logo">
+				<h2>Anales de la ciencia</h2>
+			</div>
+			<div id="log" class="cont_login">
+				<form id="log_in" class="form" onsubmit="return validacion();">
+					<input id="name" type="text" class="input" placeholder="Username or email" required="">
+					<input id="password" type="password" class="input" placeholder="Password" required="">
+					<button type="submit" class="btn_log">Login</button>
+				</form>
+			</div>
+		</ul>
+	</nav>
+	<main>
+		<div id="entity" class="container_info">
+
+			<h2>Entidades</h2>
+			<div class="type_info">
+				<div class="type">
+
+				</div>
+				<div class="type">
+
+				</div>
+				<div class="type">
+
+				</div>
+				<div class="type">
+
+				</div>
+				<div class="type">
+
+				</div>
+			</div>
+			
+		</div>
+
+		<div id="people" class="container_info">
+			<h2>Personas</h2>
+			<div class="type_info">
+				<div class="type">
+
+				</div>
+				<div class="type">
+
+				</div>
+			</div>
+		</div>
+
+		<div id="products" class="container_info">
+			<h2>Productos</h2>
+			<div class="type_info">
+				<div class="type">
+
+				</div>
+				<div class="type">
+
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>
