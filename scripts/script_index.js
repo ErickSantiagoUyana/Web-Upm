@@ -13,7 +13,9 @@ function cargar() {
 			{ clave: 2, nombre: "y", contraseña: "y", tipo: "aprendiz" },
 			{ clave: 3, nombre: "z", contraseña: "z", tipo: "aprendiz" },
 		]
+		
 	}
+
 	window.localStorage.setItem("datos", JSON.stringify(datos));
 	}
 	else{
@@ -22,6 +24,25 @@ function cargar() {
 		{
 			log(true);
 		}
+	}
+}
+function create_localStore()
+{
+	
+	let bdd = {
+		product : [
+			{ key: 0, name: "HTML", birth: "1993", death: "" ,wiki:"https://en.wikipedia.org/wiki/HTML"},
+		],
+		entity:[
+			{ key: 0, name: "WHATWG", birth: "2004", death: "" ,wiki:"https://en.wikipedia.org/wiki/WHATWG"},
+		],
+		person: [
+			{ key: 0, name: "Tim Berners-Lee", birth: "1955", death: "" ,wiki:"https://en.wikipedia.org/wiki/Tim_Berners-Lee"},
+		],
+		relation : [
+			{pkey:0 ,ekey: 0,pkey: 0}
+		]
+
 	}
 }
 
@@ -80,7 +101,8 @@ function validacion() {
 	}
 	return usuario != null;
 }
-function create_entity(){
+function esconder(){
+	
 	
 }
 
