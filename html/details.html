@@ -6,25 +6,48 @@
 	<meta charset="UTF-8">
 	<base target="_self">
 	<link rel="stylesheet" href="../styles/details_style.css">
-	<link rel="shortcut icon" href="./images/logo.png">
-	<script src="./scripts/script_index.js"></script>
+	<link rel="shortcut icon" href="../images/logo.png">
+	<script src="../scripts/script_index.js"></script>
 </head>
 
 <body>
 	<nav>
-		<ul class="nav_menu">
-			<div class="cont_logo">
-				<h2>Anales de la ciencia</h2>
+		<ul class="nav_menu" >
+			<div class="cont_index">
+				<a  href="../index.html">Indice</a>
 			</div>
 	</nav>
 
-	<main>
+	<main id = "main_details">
 
-		<div id="entity" class="container_detail">
-			<h2>Entidades</h2>
-			<div>
-				
+		<div class="container_detail">
+			<div class="container_name">
+				<h2>Nombre</h2>
 			</div>
+			<button onclick="getElementById('demo').innerHTML = Date()">What is the time?</button>
+			<p id="demo"></p>
+			<div class="container_info">
+				<div class="detail_img">
+					<img class="img" src="../images/js_logo.png">
+				</div>
+				<div class="detail_dates">
+					<h2>Fecha Inicio</h2>
+					<h2>Fecha Final</h2>
+					<h2>Defuncion</h2>
+					<h2>Wiki</h2>
+					<section>
+						<h2>Wiki</h2>
+						<ul>
+							<li type="circle">Esto es un tipo de punto.</li>
+							<li type="square">Este es otro.</li>
+							<li type="disc">Y este es otro diferente.</li>
+						</ul>
+					</section>
+				</div>
+			</div>
+		</div>
+		<div class="">
+
 		</div>
 
 	</main>

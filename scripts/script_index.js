@@ -1,60 +1,41 @@
 
+function main(){
+	create_localStore_index();
+	create_index();
+	create_user();
 
+}
 
-
-function cargar() {
-	let datos = JSON.parse(window.localStorage.getItem("datos"));
-	if(datos == null)
-	{
-	let datos = {
-		sesion: false,
-		usuarios: [
-			{ clave: 1, nombre: "x", contraseña: "x", tipo: "maestro" },
-			{ clave: 2, nombre: "y", contraseña: "y", tipo: "aprendiz" },
-			{ clave: 3, nombre: "z", contraseña: "z", tipo: "aprendiz" },
-		]
-		
+function create_user(){
+	let dates = JSON.parse(window.localStorage.getItem('dates'));
+	if (dates == null) {
+		let dates = {
+			sesion: false,
+			users: [
+				{ key: 1, name: 'x', password: 'x', type: 'writer' },
+				{ key: 2, name: 'y', password: 'y', type: 'reader' },
+				{ key: 3, name: 'z', password: 'z', type: 'reader' },
+			]
+		}
+		window.localStorage.setItem('dates', JSON.stringify(dates));
 	}
-
-	window.localStorage.setItem("datos", JSON.stringify(datos));
-	}
-	else{
-		let datos = JSON.parse(window.localStorage.getItem("datos"));
-		if(datos.sesion == true)
-		{
+	else {
+		if (dates.sesion == true) {
 			log(true);
 		}
 	}
 }
-function create_localStore()
-{
-	
-	let bdd = {
-		product : [
-			{ key: 0, name: "HTML", birth: "1993", death: "" ,wiki:"https://en.wikipedia.org/wiki/HTML"},
-		],
-		entity:[
-			{ key: 0, name: "WHATWG", birth: "2004", death: "" ,wiki:"https://en.wikipedia.org/wiki/WHATWG"},
-		],
-		person: [
-			{ key: 0, name: "Tim Berners-Lee", birth: "1955", death: "" ,wiki:"https://en.wikipedia.org/wiki/Tim_Berners-Lee"},
-		],
-		relation : [
-			{pkey:0 ,ekey: 0,pkey: 0}
-		]
 
-	}
-}
-
-function getUsuario(datos, nombre, contraseña) {
-	for (usuario of datos.usuarios) {
-		if (usuario.nombre == nombre &&
-			usuario.contraseña == contraseña) {
-			return usuario;
+function getUser(dates, name, password) {
+	for (user of dates.users) {
+		if (user.name == name &&
+			user.password == password) {
+			return user;
 		}
 	}
 	return null;
 }
+
 
 function log(int) {
 	if (int == true) {
@@ -69,67 +50,105 @@ function log(int) {
 	}
 }
 
-
-
-function log_out()
-{
-	let datos = JSON.parse(window.localStorage.getItem("datos"));
-	datos.sesion = false;
-	window.localStorage.setItem("datos", JSON.stringify(datos));
+function log_out() {
+	let dates = JSON.parse(window.localStorage.getItem('dates'));
+	dates.sesion = false;
+	window.localStorage.setItem('dates', JSON.stringify(dates));
 	location.reload();
 }
 
-function validacion() {
-	let datos = JSON.parse(window.localStorage.getItem("datos"));
-	let nombre = document.getElementById("name").value;
-	let contraseña = document.getElementById("password").value;
-	let usuario = getUsuario(datos, nombre, contraseña);
-	if (usuario == null) {
-		nombre.value = "";
-		contraseña.value = "";
-		login.action = "./login.html";
+function validation() {
+	let dates = JSON.parse(window.localStorage.getItem('dates'));
+	let name = document.getElementById('name').value;
+	let password = document.getElementById('password').value;
+	let user = getUser(dates, name, password);
+	if (user == null) {
+		name.value = '';
+		password.value = '';
 	} else {
-		window.localStorage.setItem("usuarioRegistrado", JSON.stringify(usuario));
-		if (usuario.tipo == "maestro") {
-			
-			datos.sesion = true;
-			window.localStorage.setItem("datos", JSON.stringify(datos));
+		if (user.type == 'writer'){
+			dates.sesion = true;
+			window.localStorage.setItem('dates', JSON.stringify(dates));
 			log(true);
-		} else {
-			prueba();
 		}
 	}
-	return usuario != null;
-}
-function esconder(){
-	
-	
+	return user != null;
 }
 
 
-function outterFunction() {
-	console.log(3);
+function create_localStore_index() {
+	if (JSON.parse(window.localStorage.getItem('bdd')) == null) {
+		let bdd = {
+			product: [
+				{ key: 0, name: 'HTML', birth: '1993', death: '', wiki: 'https://en.wikipedia.org/wiki/HTML', img: './images/js_logo.png' },
+			],
+			entity: [
+				{ key: 0, name: 'WHATWG', birth: '2004', death: '', wiki: 'https://en.wikipedia.org/wiki/WHATWG', img: './images/js_logo.png' },
+			],
+			person: [
+				{ key: 0, name: 'Tim Berners-Lee', birth: '1955', death: '', wiki: 'https://en.wikipedia.org/wiki/Tim_Berners-Lee', img: './images/js_logo.png'},
+			],
+			relation: [
+				{ pkey: 0, ekey: 0, pkey: 0 }
+			]
+		}
+		window.localStorage.setItem('bdd', JSON.stringify(bdd));
+	}
 }
-$(document).ready(function () {
-	$(".menu_toggle").on("click", function () {
-		if ($(".menu_item").hasClass("active"))
-			$(".menu_item").removeClass("active");
-		else
-			$(".menu_item").addClass("active");
-	});
 
-	$("main").click(function () {
-		if ($(".menu_item").hasClass("active"))
-			$(".menu_item").removeClass("active");
+function create_index(){
 
-	});
-	$("footer").click(function () {
-		if ($(".menu_item").hasClass("active"))
-			$(".menu_item").removeClass("active");
+	let entity = document.getElementById('main_index')
+	let bdd = JSON.parse(window.localStorage.getItem('bdd'));
 
-	});
+	entity.appendChild(create_container(bdd.product, 'Productos'));
+	entity.appendChild(create_container(bdd.person, 'Personas'));
+	entity.appendChild(create_container(bdd.entity, 'Entidades'));
+}
 
-	$(window).scroll(function () {
-		$(".nav_p").removeClass("menu");
-	});
-});
+function create_container(bdd, name_container) {
+	let container_info = document.createElement('div');
+	let name = document.createElement('h2');
+	let type_info = document.createElement('div');
+
+	container_info.id = 'entity';
+	container_info.setAttribute('class', 'container_info');
+
+	if (bdd) {
+		name.textContent = name_container;
+		container_info.appendChild(name);
+		type_info.className = 'type_info';
+		for (info of bdd) {
+			type_info.appendChild(create_card(info.name, info.img));
+		}
+		container_info.appendChild(type_info);
+	}
+	return container_info;
+}
+
+function create_card(name_info, img_src) {
+	let type = document.createElement('div');
+	let a = document.createElement('a');
+	let img = document.createElement('img')
+	let name = document.createElement('h2');
+
+	type.className = 'type';
+	img.setAttribute('oneclick', 'alert(33)');
+
+	//a.setAttribute('href', './html/details.html');
+	img.className = 'img';
+	img.src = img_src;
+	name.textContent = name_info
+	a.appendChild(img);
+	type.appendChild(a);
+	type.appendChild(name);
+
+	return type;
+}
+
+function prueba()
+{
+	alert('sasas');
+
+}
+
