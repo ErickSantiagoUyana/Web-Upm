@@ -10,7 +10,7 @@
 	<script src="../scripts/script_index.js"></script>
 </head>
 
-<body>
+<body onload="create_details()">
 	<nav>
 		<ul class="nav_menu" >
 			<div class="cont_index">
@@ -19,24 +19,22 @@
 	</nav>
 
 	<main id = "main_details">
-
 		<div class="container_detail">
 			<div class="container_name">
-				<h2>Nombre</h2>
+				<h2 id= "name_details"></h2>
 			</div>
-			<button onclick="getElementById('demo').innerHTML = Date()">What is the time?</button>
-			<p id="demo"></p>
+		
 			<div class="container_info">
 				<div class="detail_img">
-					<img class="img" src="../images/js_logo.png">
+					<img id= "img" class="img" src="">
 				</div>
 				<div class="detail_dates">
-					<h2>Fecha Inicio</h2>
-					<h2>Fecha Final</h2>
-					<h2>Defuncion</h2>
-					<h2>Wiki</h2>
+					<h2 id = "name" ></h2>
+					<h2 id = "birth"></h2>
+					<h2 id = "death"></h2>
+					<h2 id = "wiki"></h2>
 					<section>
-						<h2>Wiki</h2>
+						<h2>Relaciones</h2>
 						<ul>
 							<li type="circle">Esto es un tipo de punto.</li>
 							<li type="square">Este es otro.</li>
@@ -46,10 +44,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="">
-
-		</div>
-
 	</main>
 </body>
 
