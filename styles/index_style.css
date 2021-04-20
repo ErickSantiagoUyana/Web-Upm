@@ -5,7 +5,6 @@ body
 	margin-top: 0px;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: rgba(128, 255, 0, 0.068);
 }
 
 .nav_menu
@@ -13,12 +12,11 @@ body
 	display: flex;
 	flex-direction:row;
 	justify-content: space-between;
-	background-color: coral;
+	background-color: rgba(7, 6, 6, 0.166);
 }
 
 .cont_login
 {
-	background-color: rgb(221, 67, 11);
 	min-width: 200px;
 	padding-top: 23px;
 	padding-bottom: 23px;
@@ -29,7 +27,7 @@ body
 
 .btn_log
 {
-	color:crimson;
+	color:rgb(12, 12, 12);
 	width: 100px;
 	
 }
@@ -39,27 +37,35 @@ body
 {
 	width: 100%;
 	text-align: center;
-
+	
 }
+.container_info h2
+{
+	font-family:
+}
+
 .type_info
 {
 	width: 100%;
-	background-color:rgb(29, 165, 170);
+	background-color:rgba(2, 2, 2, 0.064);
 	display: flex;
 	flex-direction:row;
 	flex-wrap: wrap;
 	
 }
 
-.type,.type1
+.type
 {
-	width: 250px;
-	height: 320px;
-	background-color:rgb(170, 29, 116);
+	width: 200px;
+	height: 270px;
 	margin-top: 10px;
 	margin-bottom: 10px;
 	margin-left: auto;
 	margin-right: auto;
+	background-color:ivory;
+    border: 1px solid;
+	border-color: rgba(119, 136, 153, 0.413);
+    border-radius: 6px;
 }
 
 .img
