@@ -1,12 +1,12 @@
 
 function main() {
+	create_localStore_user();
 	create_localStore_index();
 	create_index();
-	create_user();
 
 }
 
-function create_user() {
+function create_localStore_user() {
 	let dates = JSON.parse(window.localStorage.getItem('dates'));
 	if (dates == null) {
 		let dates = {
@@ -81,13 +81,13 @@ function create_localStore_index() {
 	if (JSON.parse(window.localStorage.getItem('bdd')) == null) {
 		let bdd = {
 			product: [
-				{ key: 0, name: 'HTML', birth: '1993', death: '', wiki: 'https://en.wikipedia.org/wiki/HTML', img: '../images/js_logo.png' },
+				{ key: 0, name: 'HTML', birth: '1993', death: '', wiki: 'https://en.wikipedia.org/wiki/HTML', img: '../images/HTML_logo.png' },
 			],
 			entity: [
-				{ key: 0, name: 'WHATWG', birth: '2004', death: '', wiki: 'https://en.wikipedia.org/wiki/WHATWG', img: '../images/js_logo.png' },
+				{ key: 0, name: 'WHATWG', birth: '2004', death: '', wiki: 'https://en.wikipedia.org/wiki/WHATWG', img: '../images/WHATWG_logo.png' },
 			],
 			person: [
-				{ key: 0, name: 'Tim Berners-Lee', birth: '1955', death: '', wiki: 'https://en.wikipedia.org/wiki/Tim_Berners-Lee', img: '../images/js_logo.png' },
+				{ key: 0, name: 'Tim Berners-Lee', birth: '1955', death: '', wiki: 'https://en.wikipedia.org/wiki/Tim_Berners-Lee', img: '../images/tim.jpg' },
 			],
 			relation: [
 				{ pkey: 0, ekey: 0, pkey: 0 }
@@ -102,9 +102,9 @@ function create_index() {
 	let entity = document.getElementById('main_index')
 	let bdd = JSON.parse(window.localStorage.getItem('bdd'));
 
-	entity.appendChild(create_container(bdd.product, 'Productos', 'product'));
-	entity.appendChild(create_container(bdd.person, 'Personas', 'person'));
-	entity.appendChild(create_container(bdd.entity, 'Entidades', 'entity'));
+	entity.appendChild(create_container(bdd.product, 'PRODUCTOS', 'product'));
+	entity.appendChild(create_container(bdd.person, 'PERSONAS', 'person'));
+	entity.appendChild(create_container(bdd.entity, 'ENTIDADES', 'entity'));
 }
 
 function create_container(bdd, name_container, type_list) {
@@ -155,7 +155,7 @@ function save_details(list, key) {
 		key_info: key,
 	}
 	window.localStorage.setItem('info_details', JSON.stringify(info_details));
-	window.location.href = "./html/details.html";
+	window.location.href = "../html/details.html";
 }
 
 function create_details() {
@@ -195,16 +195,5 @@ function get_details(list, key) {
 		}
 	}
 
-	/*
-		if(list == 'product')
-		{
-			for (user of dates.users) {
-				if (user.name == name &&
-					user.password == password) {
-					return user;
-				}
-			}
-		}
-	*/
 
 }

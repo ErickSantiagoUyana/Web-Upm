@@ -1,18 +1,38 @@
-
 body
 {
 	max-width: 1400px;
 	margin-top: 0px;
 	margin-left: auto;
 	margin-right: auto;
+	background-color: rgba(255, 255, 255, 0.968);
+
 }
 
 .nav_menu
-{
+{	
 	display: flex;
 	flex-direction:row;
+	flex-wrap: wrap;
 	justify-content: space-between;
-	background-color: rgba(7, 6, 6, 0.166);
+	margin-top: 0px;
+	background-color: rgba(7, 6, 6, 0.071);
+	border-bottom: solid;
+	border-width: 1px;
+	border-color: rgba(0, 0, 0, 0.103);
+}
+
+
+.cont_logo
+{
+	margin-left: auto;
+	margin-right: auto;
+}
+.cont_logo a
+{
+	text-decoration: none;
+	font-family:sans-serif;
+	color: rgb(36, 36, 36);
+	
 }
 
 .cont_login
@@ -22,14 +42,32 @@ body
 	padding-bottom: 23px;
 	display: flex;
 	flex-direction:row;
-	justify-content: center;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-left: auto;
+	margin-right: auto;
 }
+
 
 .btn_log
 {
 	color:rgb(12, 12, 12);
 	width: 100px;
-	
+}
+
+@media all and (min-width: 768px)
+{
+	.cont_login
+	{
+		margin-left:0px;
+		margin-right:0px;
+	}
+
+	.cont_logo
+	{
+		margin-left: 0px;
+		margin-right: 0px;
+	}
 }
 
 
@@ -41,7 +79,8 @@ body
 }
 .container_info h2
 {
-	font-family:
+	font-family:sans-serif;
+	color: rgba(0, 0, 0, 0.701);
 }
 
 .type_info
@@ -70,5 +109,8 @@ body
 
 .img
 {
-	width: 100%;
+	padding-top: 2px;
+	max-width: 200px;
+	max-height: 200px;
+	
 }

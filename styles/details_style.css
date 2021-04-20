@@ -4,17 +4,28 @@ body
 	margin-top: 0px;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: rgba(128, 255, 0, 0.87);
 }
-
 
 .nav_menu
-{
+{	
 	display: flex;
-	flex-direction:row;
-	justify-content: space-between;
-	background-color: coral;
+	margin-top: 0px;
+	background-color: rgba(7, 6, 6, 0.071);
+	border-bottom: solid;
+	border-width: 1px;
+	border-color: rgba(0, 0, 0, 0.103);
 }
+
+
+
+.cont_logo a
+{
+	text-decoration: none;
+	font-family:sans-serif;
+	color: rgb(36, 36, 36);
+}
+
+
 
 .container_detail
 {
@@ -39,7 +50,17 @@ body
 	width: 700px;
 	margin-left: auto;
 	margin-right: auto;
+	display: block;
+	margin:auto;
 }
+
+.img
+{
+	height: 500px;
+	display: block;
+	margin:auto;
+}
+
 .detail_dates
 {
 	background-color: rgb(255, 86, 80);
