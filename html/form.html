@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Anales de la ciencia</title>
+	<meta charset="UTF-8">
+	<base target="_self">
+	<link rel="stylesheet" href="../styles/add_style.css">
+	<link rel="shortcut icon" href="../images/logo.png">
+	<script src="../scripts/script_index.js"></script>
+</head>
+
+<body>
+	<nav>
+		<ul class="nav_menu">
+			<div class="cont_logo">
+				<a  href="./index.html"> <h2>INDICE</h2></a>
+			</div>
+		</ul>
+	</nav>
+
+	<main id = "main_details">
+		<div class="container_detail">
+			<div class="container_name">
+				<h2 id= "name_details"></h2>
+			</div>
+		
+			<div class="container_form">
+				<form class="form" onsubmit="create_add();">
+					<p>
+						<label class="name">Nombre:</label>
+						<input class="imput" type="text" id="form_name" required>
+					</p>
+					<p>
+						<label class="birth">Fecha de nacimiento-creacion:</label>
+						<input class="imput" type="datetime" id="form_birth" required>
+					</p>
+					<p>
+						<label class="death">Fecha de defunción-o-utilidad:</label>
+						<input class="imput" type="datetime" id="form_death" required>
+					</p>
+					<p>
+						<label class="img_url">Imagen (URL o Local):</label>
+						<input class="imput" type="text" id="form_url" required>
+					</p>
+					<p>
+						<label class="wiki_url">Wiki:</label>
+						<input class="imput" type="url" id="form_wiki" required>
+					</p>
+					
+					<button type="submit"  href="./index.html" id="button">Añadir</button>
+				</form>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>

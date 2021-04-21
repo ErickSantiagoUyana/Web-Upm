@@ -10,31 +10,23 @@ body
 {	
 	display: flex;
 	margin-top: 0px;
-	background-color: rgba(7, 6, 6, 0.071);
+	background-color: rgba(7, 6, 6, 0.66);
 	border-bottom: solid;
 	border-width: 1px;
 	border-color: rgba(0, 0, 0, 0.103);
 }
 
-
-
 .cont_logo a
 {
 	text-decoration: none;
 	font-family:sans-serif;
-	color: rgb(36, 36, 36);
+	color: rgb(255, 255, 255);
 }
 
-
-
-.container_detail
-{
-	background-color: rgb(97, 102, 180);
-}
 .container_name
 {
 	text-align: center;
-	background-color: rgb(80, 150, 255);
+	font-size: 20px;
 }
 
 .container_info
@@ -44,10 +36,10 @@ body
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
+
 .detail_img
 {
-	background-color: rgb(255, 179, 80);
-	width: 700px;
+	width: 600px;
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
@@ -63,8 +55,10 @@ body
 
 .detail_dates
 {
-	background-color: rgb(255, 86, 80);
-	width: 700px;
+	background-color: rgba(70, 62, 62, 0.03);
+	width: 600px;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 20px;
+	padding-left: 20px;
 }
