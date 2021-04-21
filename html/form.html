@@ -10,7 +10,7 @@
 	<script src="../scripts/script_index.js"></script>
 </head>
 
-<body>
+<body onload="edit_info()">
 	<nav>
 		<ul class="nav_menu">
 			<div class="cont_logo">
@@ -19,10 +19,12 @@
 		</ul>
 	</nav>
 
-	<main id = "main_details">
+	<main id = "main_details" onload="edit_info();">
+		
+		
 		<div class="container_detail">
 			<div class="container_name">
-				<h2 id= "name_details"></h2>
+				<h2 id= "name_details">AÑADIR O MODIFICAR</h2>
 			</div>
 		
 			<div class="container_form">
@@ -48,7 +50,7 @@
 						<input class="imput" type="url" id="form_wiki" required>
 					</p>
 					
-					<button type="submit"  href="./index.html" id="button">Añadir</button>
+					<button type="submit" id="button">Añadir</button>
 				</form>
 			</div>
 		</div>

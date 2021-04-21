@@ -27,6 +27,7 @@ body
 {
 	text-align: center;
 	font-size: 20px;
+	font-family: sans-serif;
 }
 .container_form
 {
@@ -47,6 +48,7 @@ body
 .form p
 {
 	font-size: 20px;
+	font-family: sans-serif;
 }
 
 .imput
@@ -69,4 +71,6 @@ body
 	font-family: sans-serif;
 	font-size: 16px;
 	color: rgb(255, 255, 255);
+	font-family: sans-serif;
+
 }
