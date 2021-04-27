@@ -339,7 +339,6 @@ function create_details() {
 		button.setAttribute('onclick', 'add_info(' + String(info_details.list) + ')');
 		cont_dates.appendChild(button);
 	}
-
 }
 
 function get_details(list, key) {
