@@ -1,4 +1,3 @@
-
 function main() {
 	create_localStore_user();
 	create_localStore_index();
@@ -88,7 +87,7 @@ function create_localStore_index() {
 			person: [
 				{ key: 0, name: 'Tim Berners-Lee', birth: '1955', death: '', wiki: 'https://en.wikipedia.org/wiki/Tim_Berners-Lee', img: '../images/tim.jpg' },
 				{ key: 1, name: 'Vannevar Bush', birth: '1890', death: '1974', wiki: 'https://en.wikipedia.org/wiki/Vannevar_Bush', img: '../images/v_bush.jpg' },
-				{ key: 2, name: 'Steve Jobs', birth: '1955', death: '2011', wiki: 'https://en.wikipedia.org/wiki/Steve_Jobs', img:'https://imagessl1.casadellibro.com/a/l/t7/81/9788499921181.jpg'},
+				{ key: 2, name: 'Steve Jobs', birth: '1955', death: '2011', wiki: 'https://en.wikipedia.org/wiki/Steve_Jobs', img: 'https://imagessl1.casadellibro.com/a/l/t7/81/9788499921181.jpg' },
 			],
 		}
 		window.localStorage.setItem('bdd', JSON.stringify(bdd));
@@ -141,23 +140,19 @@ function create_container(bdd, name_container, type_list, sesion) {
 	return container_info;
 }
 
-
-
-
 function add_info(tyle_list) {
 
 	let list = tyle_list;
 	window.localStorage.setItem('list', JSON.stringify(list));
 	window.location.href = "./form.html";
-	
+
 }
 
-function edit_info(){
+function edit_info() {
 	let info_details = JSON.parse(window.localStorage.getItem('info_details'));
-	
 
-	if(info_details != null)
-	{
+
+	if (info_details != null) {
 		let info = get_details(info_details.type_list, info_details.key_info);
 
 		let form_name = document.getElementById('form_name');
@@ -170,20 +165,19 @@ function edit_info(){
 		form_birth.value = info.birth;
 		form_death.value = info.death;
 		form_url.value = info.img;
-		form_wiki.value =  info.wiki;
+		form_wiki.value = info.wiki;
 	}
 }
 
 function create_add() {
 	let info_details = JSON.parse(window.localStorage.getItem('info_details'));
-	if(info_details == null)
+	if (info_details == null)
 		create_dates();
-	else 
+	else
 		edit_dates(info_details.type_list, info_details.key_info);
 }
 
-function create_dates()
-{
+function create_dates() {
 	let bdd = JSON.parse(window.localStorage.getItem('bdd'));
 	let list = JSON.parse(window.localStorage.getItem('list'));
 	let form_name = document.getElementById('form_name').value;
@@ -209,11 +203,11 @@ function create_dates()
 	}
 	location.reload();
 	window.localStorage.setItem('bdd', JSON.stringify(bdd));
-	
+
 	alert('AÑADIDO CORRECTAMENTE');
 }
-function edit_dates(list, aux_key)
-{	
+
+function edit_dates(list, aux_key) {
 
 
 	let bdd = JSON.parse(window.localStorage.getItem('bdd'));
@@ -222,33 +216,31 @@ function edit_dates(list, aux_key)
 	let form_death = document.getElementById('form_death').value;
 	let form_url = document.getElementById('form_url').value;
 	let form_wiki = document.getElementById('form_wiki').value;
-	
+
 
 	if (list == 'product') {
-		
-		
+
+
 		let new_date = { key: aux_key, name: form_name, birth: form_birth, death: form_death, wiki: form_wiki, img: form_url };
-		bdd.product[aux_key]= new_date;
+		bdd.product[aux_key] = new_date;
 	}
 	if (list == 'person') {
-		
-		
+
+
 		let new_date = { key: aux_key, name: form_name, birth: form_birth, death: form_death, wiki: form_wiki, img: form_url };
-		bdd.product[aux_key]= new_date;
+		bdd.product[aux_key] = new_date;
 	}
 	if (list == 'entity') {
 
-		
+
 		let new_date = { key: aux_key, name: form_name, birth: form_birth, death: form_death, wiki: form_wiki, img: form_url };
-		bdd.product[aux_key]= new_date;
+		bdd.product[aux_key] = new_date;
 	}
 
 	location.reload();
 	window.localStorage.setItem('bdd', JSON.stringify(bdd));
 	alert('MODIFICADO CORRECTAMENTE');
 }
-
-
 
 function create_card(name_info, img_src, key_info, type_list, sesion) {
 	let type = document.createElement('div');
@@ -281,9 +273,6 @@ function create_card(name_info, img_src, key_info, type_list, sesion) {
 	return type;
 }
 
-
-
-
 function confirm_delete(list, key) {
 
 	let mensaje = confirm("¿Seguro que deseas borrarlo?");
@@ -295,7 +284,6 @@ function confirm_delete(list, key) {
 		alert("Cancelado");
 	}
 }
-
 
 function delete_card(list, key) {
 
@@ -327,8 +315,6 @@ function save_details(list, key) {
 	window.location.href = "./details.html";
 }
 
-
-
 function create_details() {
 
 	let info_details = JSON.parse(window.localStorage.getItem('info_details'));
@@ -345,19 +331,16 @@ function create_details() {
 	wiki.textContent = 'Wiki: ' + bdd.wiki;
 	name_details.textContent = bdd.name;
 	img.src = bdd.img;
-	if(dates.sesion == true )
-	{
+	if (dates.sesion == true) {
 		let cont_dates = document.getElementById('cont_dates');
 		let button = document.createElement('button');
 		button.className = 'button_edit';
 		button.textContent = 'EDITAR';
-		button.setAttribute('onclick', 'add_info('+String(info_details.list)+')');
+		button.setAttribute('onclick', 'add_info(' + String(info_details.list) + ')');
 		cont_dates.appendChild(button);
 	}
-	
+
 }
-
-
 
 function get_details(list, key) {
 	let bdd = JSON.parse(window.localStorage.getItem('bdd'));
