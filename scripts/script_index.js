@@ -285,7 +285,7 @@ function edit_info() {
 	let name_details = document.getElementById('name_details');
 
 	if (list[1] == 'person') {
-		form.setAttribute('onsubmit', 'create_edit_dates_person();');
+		button.setAttribute('onclick', 'create_edit_dates_person();');
 
 		if (list[0] == 'edit') {
 			name_details.textContent = 'MODIFICAR PERSONA';
@@ -304,7 +304,7 @@ function edit_info() {
 	}
 
 	if (list[1] == 'product') {
-		form.setAttribute('onsubmit', 'create_edit_dates_product();');
+		button.setAttribute('onclick', 'create_edit_dates_product();');
 
 		let list_person = document.getElementById('list_person');
 		let list_entity = document.getElementById('list_entity');
@@ -338,7 +338,7 @@ function edit_info() {
 	}
 
 	if (list[1] == 'entity') {
-		form.setAttribute('onsubmit', 'create_edit_dates_entity();');
+		button.setAttribute('onclick', 'create_edit_dates_entity();');
 		let list_person = document.getElementById('list_person');
 		let add_person = document.getElementById('add_person');
 		let delete_person = document.getElementById('delete_person');
