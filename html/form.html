@@ -5,7 +5,7 @@
 	<title>Anales de la ciencia</title>
 	<meta charset="UTF-8">
 	<base target="_self">
-	<link rel="stylesheet" href="../styles/add_style.css">
+	<link rel="stylesheet" href="../styles/form_style.css">
 	<link rel="shortcut icon" href="../images/logo.png">
 	<script src="../scripts/script_index.js"></script>
 </head>
@@ -14,43 +14,75 @@
 	<nav>
 		<ul class="nav_menu">
 			<div class="cont_logo">
-				<a  href="./index.html"> <h2>INDICE</h2></a>
+				<a href="./index.html">
+					<h2>INDICE</h2>
+				</a>
 			</div>
 		</ul>
 	</nav>
 
-	<main id = "main_details" onload="edit_info();">
-		
-		
+	<main id="main_details">
+
+
 		<div class="container_detail">
 			<div class="container_name">
-				<h2 id= "name_details">AÑADIR O MODIFICAR</h2>
+				<h2 id="name_details"></h2>
 			</div>
-		
+
 			<div class="container_form">
-				<form class="form" onsubmit="create_add();">
-					<p>
+				<form id="form_id" class="form">
+					<div>
 						<label class="name">Nombre:</label>
-						<input class="imput" type="text" id="form_name" required>
-					</p>
-					<p>
+						<input class="imput" type="text" id="form_name">
+					</div>
+					<div>
 						<label class="birth">Fecha de nacimiento-creacion:</label>
-						<input class="imput" type="datetime" id="form_birth" required>
-					</p>
-					<p>
+						<input class="imput" type="datetime" id="form_birth">
+					</div>
+					<div>
 						<label class="death">Fecha de defunción-o-utilidad:</label>
-						<input class="imput" type="datetime" id="form_death" required>
-					</p>
-					<p>
+						<input class="imput" type="datetime" id="form_death">
+					</div>
+					<div>
 						<label class="img_url">Imagen (URL o Local):</label>
-						<input class="imput" type="text" id="form_url" required>
-					</p>
-					<p>
+						<input class="imput" type="text" id="form_url">
+					</div>
+					<div>
 						<label class="wiki_url">Wiki:</label>
-						<input class="imput" type="url" id="form_wiki" required>
-					</p>
-					
-					<button type="submit" id="button">Añadir</button>
+						<input class="imput" type="url" id="form_wiki">
+					</div>
+
+					<div id="list_person">
+						<div>
+							<select id="select_person_add" class='select_class'>
+							</select>
+							<button id="add_person" class="button_add">Añadir Persona</button>
+						</div>
+
+						<div>
+							<select id="select_person_delete" class='select_class'>
+
+							</select>
+							<button id="delete_person" class="button_delete">Eliminar Persona</button>
+						</div>
+					</div>
+
+					<div id="list_entity">
+						<div>
+							<select id="select_entity_add" class='select_class'>
+							</select>
+							<button id="add_entity" type="submit" class="button_add">Añadir Entidad</button>
+						</div>
+
+						<div>
+							<select id="select_entity_delete" class='select_class'>
+							</select>
+							<button id="delete_entity" type="submit" class="button_delete">Eliminar Entidad</button>
+						</div>
+					</div>
+
+
+					<button type="submit" id="button_form" class="button_class"></button>
 				</form>
 			</div>
 		</div>

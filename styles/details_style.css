@@ -7,7 +7,7 @@ body
 }
 
 .nav_menu
-{	
+{
 	display: flex;
 	margin-top: 0px;
 	background-color: rgba(7, 6, 6, 0.66);
@@ -36,6 +36,8 @@ body
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	color: rgba(0, 0, 0, 0.74);
+
 }
 
 .detail_img
@@ -68,13 +70,19 @@ body
 	justify-content: space-between;
 	font-family: sans-serif;
 }
+.detail_relations
+{
+	font-family: sans-serif;
+	color: rgb(116, 116, 116);
+	padding-bottom: 20px;
+}
 
 .button_edit
 {
 	width: 50%;
 	height: 40px;
 	color:rgb(255, 255, 255);
-	
+
 	border-bottom: solid;
 	border-width: 1px;
 	border-radius: 5px;
