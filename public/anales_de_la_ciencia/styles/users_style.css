@@ -1,0 +1,91 @@
+body
+{
+    max-width: 1400px;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav_menu
+{
+    display: flex;
+    margin-top: 0px;
+    background-color: rgba(7, 6, 6, 0.66);
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.103);
+}
+
+.cont_logo a
+{
+    text-decoration: none;
+    font-family:sans-serif;
+    color: rgb(255, 255, 255);
+}
+.container_tittle
+{
+    text-align: center;
+    font-family: sans-serif;
+    color: dimgrey;
+}
+.container_user
+{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    margin-left: auto;
+    margin-right: auto;
+}
+.container_img
+{
+    width: 200px;
+    height: 200px;
+    background-color: dimgrey;
+}
+.img_user
+{
+    width: 200px;
+}
+
+.container_dates
+{
+    width: 600px;
+    color: dimgrey;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.container_buttons
+{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content:space-around;
+
+}
+button
+{
+    color:rgb(255, 255, 255);
+    height: 40px;
+    margin-right:20px;
+    border-bottom: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: rgba(0, 0, 0, 0.103);
+    font-size: 16px;
+    font-family: sans-serif;
+}
+.btn_1
+{
+    background-color: #4d99bf;
+
+}
+.btn_2
+{
+    background-color:red;
+}
+.btn_3
+{
+    background-color:red;
+}
